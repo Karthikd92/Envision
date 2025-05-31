@@ -12,12 +12,15 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d) fixed;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden;
+            min-width: 320px;
         }
+
 
         .header {
             width: 100%;
@@ -132,6 +135,10 @@
         }
 
         @media (max-width: 768px) {
+                    body {
+                background-attachment: fixed;
+                background-size: cover;
+            }
             .header {
                 padding: 1rem;
                 gap: 1rem;
@@ -168,27 +175,27 @@
                 width: 100%;
             }
             .gallery-container {
-                height: 300px;  /* Reduced height for mobile */
-                margin: 1rem 0;  /* Reduced margin for mobile */
+                height: 250px;
+                margin: 1rem 0;
             }
 
             .gallery {
-                width: 240px;  /* Reduced width for mobile */
-                height: 160px;  /* Reduced height for mobile */
+                width: 180px;
+                height: 120px;
             }
 
             .gallery span {
-                transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);  /* Reduced distance for mobile */
+                transform: rotateY(calc(var(--i) * 45deg)) translateZ(200px);
             }
         }
         .gallery-container {
             width: 100%;
-            height: 400px;
+            height: 300px;
             display: grid;
             place-items: center;
-            /* margin: 2rem 0; */
             position: relative;
             z-index: 1;
+            margin: 2rem 0;
         }
 
         .gallery {
@@ -226,16 +233,16 @@
     }
     @media (max-width: 480px) {
     .gallery-container {
-        height: 250px;  /* Further reduced for smaller phones */
+        height: 200px;
     }
 
     .gallery {
-        width: 200px;  /* Further reduced for smaller phones */
-        height: 133px;  /* Maintained aspect ratio */
+        width: 150px;
+        height: 100px;
     }
 
     .gallery span {
-        transform: rotateY(calc(var(--i) * 45deg)) translateZ(250px);  /* Further reduced distance */
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
     }
 }
 
