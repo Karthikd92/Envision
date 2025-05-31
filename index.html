@@ -146,14 +146,23 @@
             .header {
                 padding: 1rem;
                 gap: 1rem;
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.5rem;
             }
 
             .logo {
-                width: 60px;
+                position: static;  /* Remove absolute positioning on mobile */
+                width: 80px;      /* Slightly larger than before */
+                padding-top: 0;   /* Remove top padding */
+                margin-bottom: 0.5rem;
             }
 
             .school-name {
                 font-size: 1.5rem;
+                padding-top: 0;   /* Remove top padding since logo is above */
+                text-align: center;
+                font-size: 1.3rem;
             }
 
             .event-title {
@@ -243,19 +252,19 @@
         .container{
             padding: 1rem;
         }
-    .gallery-container {
-        height: 200px;
-    }
+        .gallery-container {
+            height: 200px;
+        }
 
-    .gallery {
-        width: 150px;
-        height: 100px;
-    }
+        .gallery {
+            width: 150px;
+            height: 100px;
+        }
 
-    .gallery span {
-        transform: rotateY(calc(var(--i) * 45deg)) translateZ(210px);
+        .gallery span {
+            transform: rotateY(calc(var(--i) * 45deg)) translateZ(210px);
+        }
     }
-}
 
     </style>
 </head>
