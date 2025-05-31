@@ -84,8 +84,8 @@
         .container {
             background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
-            border-radius: 15px;
-            margin-top: 2rem;
+            border-radius: 5px;
+            /* margin-top: 1rem; */
             position: relative;
             z-index: 1;
             display: flex;
@@ -167,24 +167,37 @@
             .btn {
                 width: 100%;
             }
+            .gallery-container {
+                height: 300px;  /* Reduced height for mobile */
+                margin: 1rem 0;  /* Reduced margin for mobile */
+            }
+
+            .gallery {
+                width: 240px;  /* Reduced width for mobile */
+                height: 160px;  /* Reduced height for mobile */
+            }
+
+            .gallery span {
+                transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);  /* Reduced distance for mobile */
+            }
         }
         .gallery-container {
-        width: 100%;
-        height: 400px;
-        display: grid;
-        place-items: center;
-        margin: 0.5rem 0;
-        position: relative;
-        z-index: 1;
-    }
+            width: 100%;
+            height: 400px;
+            display: grid;
+            place-items: center;
+            /* margin: 2rem 0; */
+            position: relative;
+            z-index: 1;
+        }
 
-    .gallery {
-        position: relative;
-        width: 300px;
-        height: 200px;
-        transform-style: preserve-3d;
-        animation: rotate 35s linear infinite;
-    }
+        .gallery {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            transform-style: preserve-3d;
+            animation: rotate 35s linear infinite;
+        }
 
     @keyframes rotate {
         from {
@@ -211,6 +224,20 @@
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
+    @media (max-width: 480px) {
+    .gallery-container {
+        height: 250px;  /* Further reduced for smaller phones */
+    }
+
+    .gallery {
+        width: 200px;  /* Further reduced for smaller phones */
+        height: 133px;  /* Maintained aspect ratio */
+    }
+
+    .gallery span {
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(250px);  /* Further reduced distance */
+    }
+}
 
     </style>
 </head>
@@ -223,7 +250,7 @@
     </div>
 
     <div class="event-container">
-        <div class="presenting-text">presenting to you</div>
+        <div class="presenting-text">presents</div>
         <div class="event-title">ENVISION 2025</div>
         <div class="event-subtitle">An Inter-School Literary Fest</div>
     </div>
@@ -258,7 +285,7 @@
 </div>
 
     <div class="container">
-        <div class="competition-title">Registration Opening Soon!</div>
+        <div class="competition-title">Registration Now!</div>
         <div class="buttons">
             <a href="#" class="btn">High School Division</a>
             <a href="#" class="btn">Middle School Division</a>
