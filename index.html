@@ -267,8 +267,84 @@
         opacity: 0;
     }
 }
+/* Add these styles to your existing <style> section */
+.contact-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    text-align: center;
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    /* margin-bottom: 1rem; */
+    color: #fff;
+    background: linear-gradient(45deg, #fff, #fdbb2d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    color: white;
+    padding: 0.25rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+}
+
+.contact-name {
+    font-weight: 600;
+    color: #fdbb2d;
+}
+
+.contact-role {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-number {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-number:hover {
+    color: #fdbb2d;
+}
+
 
 @media (max-width: 768px) {
+    .contact-section {
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
     .main-container {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -530,6 +606,21 @@
             High School Form
         </a>
     </div>
+</div>
+<div class="contact-section">
+    <h2 class="contact-title">Contact Information</h2>
+    <ul class="contact-list">
+        <li class="contact-item">
+            <span class="contact-name">Mr. Karthik</span>
+            <span class="contact-role">(Organiser)</span>
+            <a href="tel:9731463868" class="contact-number">+91 9731463868</a>
+        </li>
+        <li class="contact-item">
+            <span class="contact-name">Mr. Joseph</span>
+            <span class="contact-role">(Principal)</span>
+            <a href="tel:9164100367" class="contact-number">+91 9164100367</a>
+        </li>
+    </ul>
 </div>
 </div>
 <div class="side-column">
