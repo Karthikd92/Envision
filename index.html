@@ -8,6 +8,64 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        .main-container {
+    display: grid;
+    grid-template-columns: minmax(250px, 1fr) minmax(500px, 2fr) minmax(250px, 1fr);
+    gap: 3rem; /* Increased gap between columns */
+    width: 100%;
+    max-width: 1400px; /* Increased max-width */
+    margin: 0 auto;
+    padding: 0 2rem; /* Increased padding */
+}
+.center-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.side-column {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+    color: white;
+    min-width: 220px;
+}
+
+.event-list {
+    list-style: none;
+    padding: 0;
+}
+
+.event-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.event-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #fdbb2d;
+}
+
+.event-category {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.column-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(45deg, #fff, #fdbb2d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
         body {
             margin: 0;
             padding: 0;
@@ -85,18 +143,19 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
+            /* background: rgba(255, 255, 255, 0.1); */
+            padding: 1.5rem;
             border-radius: 5px;
             /* margin-top: 1rem; */
             position: relative;
             z-index: 1;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: space-between;
             gap: 2rem;
-            width: 90%;
-            max-width: 800px;
+            width: 100%;
+            max-width: 600px;
             margin: 0 auto;
             box-sizing: border-box;
         }
@@ -204,13 +263,33 @@
 }
 
 @media (max-width: 768px) {
-    .container {
-        width: 95%;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        margin: 0.5 auto;
+    .main-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+        display: flex;
         flex-direction: column;
-                text-align: center;
+    }
+
+    .center-content {
+        order: -1; /* Makes this appear first */
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .side-column {
+        order: 1; /* Makes these appear after center content */
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .container {
+        width: 100%;
+        padding: 1rem;
+        margin: 0 auto;
+        flex-direction: column;
+        text-align: center;
     }
     
 
@@ -302,22 +381,22 @@
             }
         }
         .gallery-container {
-            width: 100%;
-            height: 300px;
-            display: grid;
-            place-items: center;
-            position: relative;
-            z-index: 2;
-            margin: 2rem 0;
-        }
+    width: 100%;
+    height: 240px; /* Reduced from 300px */
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 2;
+    margin: 2rem 0;
+}
 
-        .gallery {
-            position: relative;
-            width: 300px;
-            height: 200px;
-            transform-style: preserve-3d;
-            animation: rotate 35s linear infinite;
-        }
+.gallery {
+    position: relative;
+    width: 240px; /* Reduced from 300px */
+    height: 160px; /* Reduced from 200px */
+    transform-style: preserve-3d;
+    animation: rotate 35s linear infinite;
+}
         .gallery:hover {
             animation-play-state: paused;
         }
@@ -337,7 +416,7 @@
         height: 100%;
         transform-origin: center;
         transform-style: preserve-3d;
-        transform: rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+            transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px); /* Reduced from 380px */
     }
 
     .gallery span img {
@@ -376,6 +455,28 @@
         <img src="Logo.png" alt="Lourdes Boys High School Logo" class="logo">
         <h1 class="school-name">Lourdes Boys High School, Halasuru</h1>
     </div>
+
+    <div class="main-container">
+    <!-- Left Column -->
+    <div class="side-column">
+        <h2 class="column-title">High School Events</h2>
+        <ul class="event-list">
+            <li class="event-item">
+                <div class="event-name">Battle of the Brains</div>
+                <div class="event-category">Quiz</div>
+            </li>
+            <li class="event-item">
+                <div class="event-name">Clash of the Orators</div>
+                <div class="event-category">Elocution</div>
+            </li>
+            <li class="event-item">
+                <div class="event-name">Quill Quest</div>
+                <div class="event-category">Essay Writing</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="center-content">
 
     <div class="event-container">
         <div class="presenting-text">presents</div>
@@ -421,6 +522,21 @@
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdR7S0NKfvw5Tk6v-ss591BSt-WAHBiJWXk_HDswDr9gbojJw/viewform" class="btn" target="_blank">
             High School Form
         </a>
+    </div>
+</div>
+</div>
+<div class="side-column">
+        <h2 class="column-title">Middle School Events</h2>
+        <ul class="event-list">
+            <li class="event-item">
+                <div class="event-name">Scribble Stars</div>
+                <div class="event-category">Essay Writing</div>
+            </li>
+            <li class="event-item">
+                <div class="event-name">Tiny Thoughts</div>
+                <div class="event-category">Elocution</div>
+            </li>
+        </ul>
     </div>
 </div>
 
